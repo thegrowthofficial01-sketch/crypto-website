@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-crypto-darker text-crypto-text antialiased;
+  }
+  ::selection {
+    @apply bg-crypto-accent text-white;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-crypto-panel border border-crypto-border rounded-2xl backdrop-blur-sm;
+  }
+  .glass-input {
+    @apply w-full bg-crypto-darker border border-crypto-border rounded-xl px-4 py-3 text-crypto-text placeholder-crypto-muted focus:outline-none focus:border-crypto-accent focus:ring-1 focus:ring-crypto-accent transition-all duration-200;
+  }
+  .glass-button {
+    @apply bg-crypto-accent text-white px-6 py-3 rounded-xl font-medium hover:bg-crypto-accentHover transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:border-crypto-accent/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)];
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-crypto-accent to-crypto-success;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
